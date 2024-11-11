@@ -1,5 +1,8 @@
+bancos = ["BBVA", "Santander", "Banco Azteca"]
+
 start = input("Bienvenido a Uber Eats, te gustaria ordenar algo de comida si/no: ")
 cuenta = 0
+porc = 0
 
 while start == "si" or start == "Si" or start == "SI":
     start = start + "."
@@ -123,5 +126,64 @@ while start == "si" or start == "Si" or start == "SI":
 
     start = input("\nDesea ordenar algo más si/no: ")
 
-    print(f"\n--------- Su TOTAL es = ${cuenta} ---------")
+    if start == "no":
+        print(f"\n--------- Su TOTAL es = ${cuenta} ---------")
+
+        print("\nPuedes pagar con cualquiera de los siguentes bancos \n 1 - BBVA\n 2 - Santander\n 3 - Banco Azteca")
+        banco = input("\nSelecciona el banco con el que deseas pagar: ")
+
+        if banco == "1" or banco == bancos[0]:
+
+            print(f"\nAl pagar con BBVA se puede aplicar un descuento del 10% al monto de ${cuenta}")
+        
+            desc = input("\n¿Deseas aplicarla? si/no: ")
+
+            if desc == "si" or desc == "SI" or desc == "Si":
+                porc = cuenta*0.1
+                desc_banc = cuenta - porc
+                print(f"\n--------- Con el descuento bancario TOTAL a pagar es de ${desc_banc} ---------")
+            else:
+                cuenta = cuenta
+
+        if banco == "2" or banco == bancos[1]:
+
+            print(f"\nAl pagar con Santander se puede aplicar un descuento del 5% al monto de ${cuenta}")
+        
+            desc = input("\n¿Deseas aplicarla? si/no: ")
+
+            if desc == "si" or desc == "SI" or desc == "Si":
+                porc = cuenta*0.1
+                desc_banc = cuenta - porc
+                print(f"\n--------- Con el descuento bancario TOTAL a pagar es de ${desc_banc} ---------")
+            else:
+                cuenta = cuenta
+
+        if banco == "3" or banco == bancos[2]:
+
+            print(f"\nAl pagar con Banco Azteca se puede aplicar un descuento del 12% al monto de ${cuenta}")
+        
+            desc = input("\n¿Deseas aplicarla? si/no: ")
+
+            if desc == "si" or desc == "SI" or desc == "Si":
+                porc = cuenta*0.1
+                desc_banc = cuenta - porc
+                print(f"\n--------- Con el descuento bancario TOTAL a pagar es de ${desc_banc} ---------")
+            else:
+                cuenta = cuenta
+
+        if cuenta >= 1500:
+            cuenta = cuenta - 200
+            cuenta = cuenta - porc
+            print("\n-------- FELICIDADES, por tu compra superior a $1500 te llevas un cupón con $200 de regalo -------- ")
+
+        if cuenta < 200:
+            cuenta + 30
+            print("\n--------- Como su compra es inferior a $200 se le cobraran 30 pesos extra de envío ---------\n")
+
+        print(f"\n-------------- Con el descuento bancario y los cupones canjeados el TOTAL a pagar es de ${cuenta} --------------\n")
+    
+
+      
+
+
 

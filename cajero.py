@@ -1,7 +1,6 @@
 saldos = {"BBVA":15000, "Santander":18000, "Azteca":20000}
 bancos = list(saldos.keys())
 
-
 def sald(banco,saldo):
     print(f"\n----- Tu saldo con {banco} = ${saldo} -----")
 
@@ -9,7 +8,6 @@ def ret(saldo, banco, max):
     retiro = int(input("\nCuanto dinero deseas retirar: "))
 
     while retiro > saldo or retiro > max:
-        
         retiro = int(input("\nNo puedes hacer un retiro que sea superior a tu saldo o a $9900 por favor intenta de nuevo: "))
     
     saldos[banco] = saldos[banco] - retiro
@@ -53,7 +51,6 @@ while start == "s":
             if modo == "3" or modo == "Hacer un abono":
                 abono("BBVA")
     
-    
     if banco == "2" or banco == "Santander":
         nip = "5678"
 
@@ -75,7 +72,6 @@ while start == "s":
 
             if modo == "3" or modo == "Hacer un abono":
                 abono("Santander")
-    
 
     if banco == "3" or banco == "Banco Azteca":
         nip = "9876"
